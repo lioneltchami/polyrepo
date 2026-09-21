@@ -2,7 +2,7 @@
 
 A simple React search engine for open-source projects across GitHub, GitLab, and Bitbucket.
 
-[Live demo](https://polyrepo.sanixdk.xyz/) · [Repo](https://github.com/Sanix-Darker/polyrepo)
+[Live demo](https://polyrepo.sanixdk.xyz/) · [Repo](https://github.com/lioneltchami/polyrepo)
 
 ![Polyrepo screenshot](./public/screenshot.png)
 
@@ -28,7 +28,7 @@ A simple React search engine for open-source projects across GitHub, GitLab, and
 ## Clone
 
 ```bash
-git clone https://github.com/Sanix-Darker/polyrepo.git && cd polyrepo
+git clone https://github.com/lioneltchami/polyrepo.git && cd polyrepo
 ```
 
 ## Run locally
