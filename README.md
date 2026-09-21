@@ -1,10 +1,10 @@
-# Zollo
+# Polyrepo
 
 A simple React search engine for open-source projects across GitHub, GitLab, and Bitbucket.
 
-[Live demo](https://zollo.sanixdk.xyz/) · [Repo](https://github.com/Sanix-Darker/zzollo)
+[Live demo](https://polyrepo.sanixdk.xyz/) · [Repo](https://github.com/Sanix-Darker/polyrepo)
 
-![Zollo screenshot](./public/screenshot.png)
+![Polyrepo screenshot](./public/screenshot.png)
 
 ## Features
 
@@ -28,7 +28,7 @@ A simple React search engine for open-source projects across GitHub, GitLab, and
 ## Clone
 
 ```bash
-git clone https://github.com/Sanix-Darker/zzollo.git && cd zzollo
+git clone https://github.com/Sanix-Darker/polyrepo.git && cd polyrepo
 ```
 
 ## Run locally
@@ -49,14 +49,14 @@ yarn build
 Output lands in `build/`. Serve it with any static server, or use the bundled helper:
 
 ```bash
-./zolo.sh        # installs serve globally, then builds and serves on port 3000
+./polyrepo.sh    # installs serve globally, then builds and serves on port 3000
 ```
 
 ## Docker
 
 ```bash
-docker build -t zollo:latest -f ./Dockerfile .
-docker run -p 3000:80 -it zollo:latest
+docker build -t polyrepo:latest -f ./Dockerfile .
+docker run -p 3000:80 -it polyrepo:latest
 ```
 
 Or with the Makefile:

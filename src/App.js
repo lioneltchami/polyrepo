@@ -61,7 +61,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <a href="/" className="logo">zzollo</a>
+        <a href="/" className="logo">polyrepo</a>
         <p className="tagline">Search open-source projects across GitHub, GitLab & Bitbucket</p>
       </header>
 
@@ -138,7 +138,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <a href="https://github.com/sanix-darker/zzollo" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/sanix-darker/polyrepo" target="_blank" rel="noopener noreferrer">
           View on GitHub
         </a>
       </footer>

@@ -1,7 +1,7 @@
 .PHONY: docker-build docker-run
 
 docker-build:
-	docker build -t zzollo:latest -f ./Dockerfile .
+	docker build -t polyrepo:latest -f ./Dockerfile .
 
 docker-run:
-	docker run -p 3000:80 -it zzollo:latest
+	docker run -p 3000:80 -it polyrepo:latest

@@ -5,7 +5,7 @@ import App from './App';
 describe('App', () => {
   test('renders the brand logo', () => {
     const { getByText } = render(<App />);
-    expect(getByText(/zzollo/i)).toBeInTheDocument();
+    expect(getByText(/polyrepo/i)).toBeInTheDocument();
   });
 
   test('renders the search input', () => {
