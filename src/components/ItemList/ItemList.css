@@ -8,6 +8,24 @@
   margin-bottom: 1rem;
 }
 
+.results-warning {
+  background: rgba(255, 200, 0, 0.08);
+  border: 1px solid rgba(255, 200, 0, 0.3);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+.error-line {
+  margin: 0.25rem 0;
+}
+
+.empty-state .error-line {
+  color: var(--text);
+}
+
 .items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));

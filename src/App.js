@@ -38,12 +38,15 @@ function App() {
     if (search.trim()) setShouldSearch(true);
   }, [search]);
 
-  const handleSearch = useCallback((e) => {
-    if (e.key === "Enter" && search.trim()) {
-      setShouldSearch(true);
-      window.history.replaceState(null, "", `?q=${encodeURIComponent(search)}`);
-    }
+  const triggerSearch = useCallback(() => {
+    if (!search.trim()) return;
+    setShouldSearch(true);
+    window.history.replaceState(null, "", `?q=${encodeURIComponent(search)}`);
   }, [search]);
+
+  const handleSearch = useCallback((e) => {
+    if (e.key === "Enter") triggerSearch();
+  }, [triggerSearch]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -76,7 +79,7 @@ function App() {
           />
           <button
             className="search-btn"
-            onClick={() => search.trim() && setShouldSearch(true)}
+            onClick={triggerSearch}
             aria-label="Search"
           >
             →
