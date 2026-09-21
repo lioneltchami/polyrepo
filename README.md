@@ -1,66 +1,101 @@
-# Zolo
+# Zollo
 
-A simple ReactJs-SearchEngine for Open-sources projects on Github, GitLab and Bitbucket !
+A simple React search engine for open-source projects across GitHub, GitLab, and Bitbucket.
 
-<a href="https://zzollo.co"><img src="./public/screenshot.png" /></a>
+[Live demo](https://zollo.sanixdk.xyz/) · [Repo](https://github.com/Sanix-Darker/zzollo)
 
-<br>
+![Zollo screenshot](./public/screenshot.png)
 
-[DEMO-VIDEO](https://www.loom.com/share/6ffd428b077f4ffeb7c35f2f1d56d74b)
+## Features
 
-[SEARCH-ENGINE-LINK](https://zollo.sanixdk.xyz/)
+- 🔎 **Multi-source search** — query GitHub, GitLab, and Bitbucket at once, or pick a single source.
+- 🧭 **Filters** — narrow by source and language; sort by stars, forks, or open issues.
+- ⚡ **Smart fetching** — `AbortController` cancels stale searches; source-driven pagination; rate-limit detection with a friendly banner.
+- 🎨 **Dark, responsive UI** — plain CSS with CSS variables; no UI framework.
 
-## REQUIREMENTS
+## Stack
 
-- yarn/npm || docker
-- create-react-app
+- React 18 + `react-scripts` 5 (Create React App)
+- Plain CSS
+- Browser-native `fetch` against public REST APIs — no backend
 
-## CLONE THE REPOSITORY
+## Requirements
+
+- Node.js 18+ (tested on 20)
+- Yarn (or npm)
+- Docker (optional, for the containerized build)
+
+## Clone
 
 ```bash
-$ git clone https://github.com/Sanix-Darker/zzollo.git && cd zzollo
+git clone https://github.com/Sanix-Darker/zzollo.git && cd zzollo
 ```
 
-## WITH DOCKER
+## Run locally
 
 ```bash
-$ docker build -t zzollo:latest -f ./Dockerfile .
-$ docker run -p 3000:80 -it zzollo:latest
+yarn install
+yarn start
+```
+
+App opens at [http://localhost:3000](http://localhost:3000).
+
+### Production build
+
+```bash
+yarn build
+```
+
+Output lands in `build/`. Serve it with any static server, or use the bundled helper:
+
+```bash
+./zolo.sh        # installs serve globally, then builds and serves on port 3000
+```
+
+## Docker
+
+```bash
+docker build -t zollo:latest -f ./Dockerfile .
+docker run -p 3000:80 -it zollo:latest
 ```
 
 Or with the Makefile:
 
 ```bash
-$ make docker-build
-$ make docker-run
+make docker-build
+make docker-run
 ```
 
-## HOW TO INSTALL & RUN
+The container runs as the bundled `nginx` user (uid 101, non-root) on `nginx:1.27-alpine`.
 
-You just have to run :
+## Tests
 
 ```bash
-$ yarn install
-$ yarn start
-
-# Using zolo.sh(this will install all deps, then build and serve)
-# this will install globally 'serve' lib.
-$ ./zolo.sh
+yarn test
 ```
 
-## APPLICATION WILL BE RUNNING ON
+25 tests across `App`, `Pagination`, and `Item` — smoke + behavior + windowing logic. CI runs on every push and PR via `.github/workflows/ci.yml`.
 
-[http://localhost:3000](http://localhost:3000)
+## Project layout
 
-## How to contribute
+```
+src/
+  App.js                          # top-level state, search input, filter selects
+  components/
+    Item/                         # repository card
+    ItemList/                     # fetch + filter + paginate + render
+    Pagination/                   # numeric pagination with ellipsis windowing
+  index.js                        # React root
+```
 
-Just follow these steps :
+## Contributing
 
-- Create an issue with your fix/feature/improvement (Optionnal but recommended).
-- Fork the project.
-- Create a branch for your feature/update/fix(Make sure to have the latest master-branch updates).
-- Create a Pull Request to develop branch.
-- After a check, it will be merged to the project.
+Pull requests are welcome. Please:
+
+1. Open an issue describing the change (optional but recommended).
+2. Fork the project and create a feature branch off `main`.
+3. Keep `yarn test` and `yarn build` green.
+4. Open a PR — CI must pass before merge.
 
 ## Author
 
