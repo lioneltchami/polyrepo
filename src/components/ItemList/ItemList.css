@@ -49,6 +49,28 @@
   opacity: 0.5;
 }
 
+/* Error variant of the empty state — make the "!" glyph
+   more prominent than the neutral "∅" icon used for
+   "no results", but stay subtle on the dark-theme palette. */
+.empty-state.is-error .empty-icon {
+  color: #ff6b6b;
+  font-size: 3.5rem;
+  font-weight: 700;
+  opacity: 0.95;
+  text-shadow: 0 0 12px rgba(255, 107, 107, 0.25);
+}
+
+.empty-state.is-error {
+  color: var(--text);
+}
+
+.empty-state.is-error .error-line {
+  color: var(--text);
+  opacity: 0.85;
+  margin: 0.15rem 0;
+  font-size: 0.95rem;
+}
+
 .spinner {
   width: 32px;
   height: 32px;
